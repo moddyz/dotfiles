@@ -28,6 +28,10 @@ func! DeleteTrailingWS()
  exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.cpp :call DeleteTrailingWS()
+autocmd BufWrite *.cc :call DeleteTrailingWS()
+autocmd BufWrite *.h :call DeleteTrailingWS()
+autocmd BufWrite *.hh :call DeleteTrailingWS()
 
 " Switch between header and source files.
 map <F5> :call CurtineIncSw()<CR>
