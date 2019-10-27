@@ -35,3 +35,6 @@ autocmd BufWrite *.hh :call DeleteTrailingWS()
 
 " Switch between header and source files.
 map <F5> :call CurtineIncSw()<CR>
+
+" 0 should jump to first character non-whitespace character.
+map 0 ^
