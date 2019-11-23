@@ -39,3 +39,9 @@ map <F4> :call CurtineIncSw()<CR>
 
 " 0 should jump to first character non-whitespace character.
 map 0 ^
+
+" Incremental search-as-you-type.
+:set incsearch
+
+" Highlight all matching results.
+:set hlsearch
