@@ -41,7 +41,10 @@ autocmd BufWrite *.cc :call DeleteTrailingWS()
 autocmd BufWrite *.h :call DeleteTrailingWS()
 autocmd BufWrite *.hh :call DeleteTrailingWS()
 
-" Switch between header and source files.
+" Prioritize cpp when switching between header and source.
+let g:alternateExtensions_h = "cpp,c,cc,cxx,CC"
+
+" Switch between header and source files via F4
 map <F4> :A!<CR>
 
 " Run clang-format against current, optionally selected, buffer.
