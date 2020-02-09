@@ -1,0 +1,7 @@
+[user]
+	email = moddy3d@gmail.com
+	name = moddyz
+[push]
+    default = current
+[format]
+	pretty = oneline
