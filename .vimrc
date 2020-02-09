@@ -37,6 +37,10 @@ autocmd BufWrite *.hh :call DeleteTrailingWS()
 " Switch between header and source files.
 map <F4> :call CurtineIncSw()<CR>
 
+" Run clang-format against current, optionally selected, buffer.
+autocmd FileType c,cpp,objc nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><F8> :ClangFormat<CR>
+
 " 0 should jump to first character non-whitespace character.
 map 0 ^
 
