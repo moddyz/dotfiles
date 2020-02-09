@@ -14,6 +14,13 @@ syntax enable
 " 2 lines for the bottom command bar.
 set cmdheight=2
 
+" Show status line, with file name, line, column.
+set laststatus=2
+set statusline=%F%=L%l:C%c
+
+" Style the status bar
+hi StatusLine ctermbg=white ctermfg=black
+
 " Use spaces instead of tabs
 set expandtab
 
@@ -35,7 +42,7 @@ autocmd BufWrite *.h :call DeleteTrailingWS()
 autocmd BufWrite *.hh :call DeleteTrailingWS()
 
 " Switch between header and source files.
-map <F4> :call CurtineIncSw()<CR>
+map <F4> :A<CR>
 
 " Run clang-format against current, optionally selected, buffer.
 autocmd FileType c,cpp,objc nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
