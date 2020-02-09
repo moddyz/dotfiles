@@ -45,3 +45,7 @@ map 0 ^
 
 " Highlight all matching results.
 :set hlsearch
+
+" 2 spaces per tab for yaml files.
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
+autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
