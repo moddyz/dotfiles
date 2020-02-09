@@ -42,7 +42,7 @@ autocmd BufWrite *.h :call DeleteTrailingWS()
 autocmd BufWrite *.hh :call DeleteTrailingWS()
 
 " Switch between header and source files.
-map <F4> :A<CR>
+map <F4> :A!<CR>
 
 " Run clang-format against current, optionally selected, buffer.
 autocmd FileType c,cpp,objc nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
