@@ -63,3 +63,7 @@ map 0 ^
 " 2 spaces per tab for yaml files.
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+" Keep non-current buffer around and hidden, to preserve undo history.
+set hidden
+:set hlsearch
