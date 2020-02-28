@@ -11,6 +11,12 @@ syntax enable
 " Map \s to initiate replacement of word underneath cursor.
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+" Map \y for copying to clipboard.
+:nnoremap <Leader>y "+y
+
+" Map \p for pasting from clipboard.
+:nnoremap <Leader>p "+p
+
 " 2 lines for the bottom command bar.
 set cmdheight=2
 
