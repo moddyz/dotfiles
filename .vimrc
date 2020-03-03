@@ -47,6 +47,7 @@ autocmd BufWrite *.cc :call DeleteTrailingWS()
 autocmd BufWrite *.h :call DeleteTrailingWS()
 autocmd BufWrite *.hh :call DeleteTrailingWS()
 autocmd BufWrite CMakeLists.txt :call DeleteTrailingWS()
+autocmd BufWrite *.cmake :call DeleteTrailingWS()
 
 " Prioritize cpp when switching between header and source.
 let g:alternateExtensions_h = "cpp,c,cc,cxx,CC"
