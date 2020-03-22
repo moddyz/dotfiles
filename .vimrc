@@ -53,7 +53,7 @@ autocmd BufWrite *.cmake :call DeleteTrailingWS()
 let g:alternateExtensions_h = "cpp,c,cc,cxx,CC"
 
 " Switch between header and source files via F4
-map <F4> :A!<CR>
+map <F4> :FSHere<CR>
 
 " Run clang-format against current, optionally selected, buffer.
 autocmd FileType c,cpp,objc nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
