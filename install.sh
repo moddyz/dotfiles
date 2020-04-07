@@ -1,6 +1,6 @@
 #/usr/bin/env sh
 
-set -e
+set -euxo pipefail
 
 echo "Installing linux configuration files."
 cp -v $(dirname "$0")/.vimrc ~/.vimrc
