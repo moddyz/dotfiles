@@ -56,8 +56,8 @@ let g:alternateExtensions_h = "cpp,c,cc,cxx,CC"
 map <F4> :FSHere<CR>
 
 " Run clang-format against current, optionally selected, buffer.
-autocmd FileType c,cpp,objc nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><F8> :ClangFormat<CR>
+autocmd FileType c,cpp,objc,javascript nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc,javascript vnoremap <buffer><F8> :ClangFormat<CR>
 
 " 0 should jump to first character non-whitespace character.
 map 0 ^
