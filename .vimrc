@@ -62,7 +62,7 @@ autocmd FileType c,cpp,objc,javascript vnoremap <buffer><F8> :ClangFormat<CR>
 
 " Additional args for cmake-format.
 " Forces subgroups and arguments into a vertical layout.
-let g:cmake_format_args = "--max-pargs-hwrap 0 --dangle-parens true"
+let g:cmake_format_args = "--max-pargs-hwrap 0 --dangle-parens true --tab-size 4"
 
 " Run cmake-format against current, optionally selected buffer.
 autocmd FileType cmake nnoremap <buffer><F8> :<C-u>CMakeFormat<CR>
