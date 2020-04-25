@@ -60,9 +60,13 @@ map <F4> :FSHere<CR>
 autocmd FileType c,cpp,objc,javascript nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc,javascript vnoremap <buffer><F8> :ClangFormat<CR>
 
+" Additional args for cmake-format.
+" Forces subgroups and arguments into a vertical layout.
+let g:cmake_format_args = "--max-subgroups-hwrap 0 --max-pargs-hwrap 0"
+
 " Run cmake-format against current, optionally selected buffer.
 autocmd FileType cmake nnoremap <buffer><F8> :<C-u>CMakeFormat<CR>
-"autocmd FileType c,cpp,objc,javascript vnoremap <buffer><F8> :CMakeFormat<CR>
+autocmd FileType cmake vnoremap <buffer><F8> :CMakeFormat<CR>
 
 " 0 should jump to first character non-whitespace character.
 map 0 ^

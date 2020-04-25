@@ -15,12 +15,19 @@ let s:original_cpo = &cpo
 " Reset the compatibility option(s) to vim defaults (aABceFs)
 set cpo&vim
 
-" Store a variable for the cmake-format executable command.
-let g:cmake_format_cmd = 'cmake-format'
+" Default variable for the cmake-format executable.
+if !exists('g:cmake_format_cmd')
+    let g:cmake_format_cmd = 'cmake-format'
+endif
+
+" Default variable for additional arguments to the cmake-format executable.
+if !exists('g:cmake_format_args')
+    let g:cmake_format_args = ''
+endif
 
 " Utility function for checking the status of the last executed system
 " command.
-function! s:WasLastSystemSuccess() abort
+function! s:WasLastSystemCommandSuccessful() abort
 	let exit_success = (v:shell_error) == 0
 	return exit_success
 endfunction
@@ -35,7 +42,9 @@ endfunction
 
 " Function which automatically formats the current buffer, using cmake-format.
 function! s:CMakeFormatCurrentBuffer()
+    " Local variables for command name and additional arguments.
     let l:cmake_format_cmd = g:cmake_format_cmd
+    let l:cmake_format_args = g:cmake_format_args
 
     " Create a temporary file>
     let temp_file_path=tempname()
@@ -44,8 +53,8 @@ function! s:CMakeFormatCurrentBuffer()
     call writefile(getline(1, '$'), temp_file_path)
 
     " Run cmake-format on temporary file.
-    let l:cmake_format_output = system(l:cmake_format_cmd . ' ' . temp_file_path)
-    if s:WasLastSystemSuccess()
+    let l:cmake_format_output = system(l:cmake_format_cmd . ' ' . l:cmake_format_args . ' ' . temp_file_path)
+    if s:WasLastSystemCommandSuccessful()
         " Cache original cursor position and view state(s).
         let original_pos = a:0 >= 1 ? a:1 : getpos('.')
 	    let original_view = winsaveview()
