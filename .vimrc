@@ -48,6 +48,7 @@ autocmd BufWrite *.h :call DeleteTrailingWS()
 autocmd BufWrite *.hh :call DeleteTrailingWS()
 autocmd BufWrite CMakeLists.txt :call DeleteTrailingWS()
 autocmd BufWrite *.cmake :call DeleteTrailingWS()
+autocmd BufWrite *.vim :call DeleteTrailingWS()
 
 " Prioritize cpp when switching between header and source.
 let g:alternateExtensions_h = "cpp,c,cc,cxx,CC"
@@ -58,6 +59,10 @@ map <F4> :FSHere<CR>
 " Run clang-format against current, optionally selected, buffer.
 autocmd FileType c,cpp,objc,javascript nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc,javascript vnoremap <buffer><F8> :ClangFormat<CR>
+
+" Run cmake-format against current, optionally selected buffer.
+autocmd FileType cmake nnoremap <buffer><F8> :<C-u>CMakeFormat<CR>
+"autocmd FileType c,cpp,objc,javascript vnoremap <buffer><F8> :CMakeFormat<CR>
 
 " 0 should jump to first character non-whitespace character.
 map 0 ^
