@@ -1,6 +1,6 @@
-# LinuxConfig
+# UnixConfig
 
-Personal linux or MacOS configuration files. 
+Personal Linux or MacOS configuration files. 
 
 Run `install.sh` to deploy the configuration files to your home directory.
 
