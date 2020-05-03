@@ -87,3 +87,9 @@ autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 " Keep non-current buffer around and hidden, to preserve undo history.
 set hidden
 :set hlsearch
+
+" Enable doxygen syntax highlighting for C/C++.
+autocmd FileType c,cpp,objc set syntax=cpp.doxygen
+
+" Delect *.dox as doxygen.
+au BufNewFile,BufRead *.dox setfiletype doxygen
