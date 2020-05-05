@@ -8,6 +8,9 @@ filetype indent on
 " Syntax highlighting
 syntax enable
 
+" Color scheme.
+colorscheme desert
+
 " Map \s to initiate replacement of word underneath cursor.
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
