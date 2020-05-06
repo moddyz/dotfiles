@@ -14,3 +14,12 @@ findAndReplace() {
         find . -name ".git" -prune -o -type f -exec sed -i "s/$1/$2/g" {} +
     fi
 }
+
+findAndDeleteLines() {
+    if [ ! $# -eq 1 ]
+    then
+        echo "usage: findAndDeleteLines <PATTERN>"
+    else
+        find . -name ".git" -prune -o -type f -exec sed -i "/$1/g" {} +
+    fi
+}
