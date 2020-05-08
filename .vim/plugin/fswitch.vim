@@ -161,7 +161,7 @@ function! s:FSGetAlternateFilename(filepath, filename, newextension, location, m
                     if match(a:filepath, part1) == -1
                         let path = ""
                     else
-                        let path = a:filepath . s:os_slash . part2 . 
+                        let path = a:filepath . s:os_slash . part2 .
                                      \ s:os_slash . a:filename . '.' . a:newextension
                     endif
                 elseif cmd == 'ifabs'
@@ -221,7 +221,7 @@ endfunction
 " This function will return a path that is the best candidate for the companion
 " file to switch to, so long as that file actually exists on the filesystem and
 " is readable.
-" 
+"
 function! FSReturnReadableCompanionFilename(filename)
     return s:FSReturnCompanionFilename(a:filename, 1)
 endfunction
@@ -279,8 +279,8 @@ endfunction
 "
 augroup fswitch_au_group
     au!
-    au BufEnter *.h call s:SetVariables('cpp,c', 'reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|')
-    au BufEnter *.c,*.cpp call s:SetVariables('h', 'reg:/src/include/,reg:|src|include/**|,ifrel:|/src/|../include|')
+    au BufEnter *.h call s:SetVariables('cpp,c,cu', 'reg:/include/src/,reg:/include.*/src/,ifrel:|/include/|../src|')
+    au BufEnter *.c,*.cpp,*.cu call s:SetVariables('h', 'reg:/src/include/,reg:|src|include/**|,ifrel:|/src/|../include|')
 augroup END
 
 "

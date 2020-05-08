@@ -53,9 +53,6 @@ autocmd BufWrite CMakeLists.txt :call DeleteTrailingWS()
 autocmd BufWrite *.cmake :call DeleteTrailingWS()
 autocmd BufWrite *.vim :call DeleteTrailingWS()
 
-" Prioritize cpp when switching between header and source.
-let g:alternateExtensions_h = "cpp,c,cc,cxx,CC"
-
 " Switch between header and source files via F4
 map <F4> :FSHere<CR>
 
@@ -92,7 +89,7 @@ set hidden
 :set hlsearch
 
 " Enable doxygen syntax highlighting for C/C++.
-autocmd FileType c,cpp,objc,cuda set syntax=cpp.doxygen
+autocmd FileType c,cpp,objc set syntax=cpp.doxygen
 
 " Delect *.dox as doxygen.
 au BufNewFile,BufRead *.dox setfiletype doxygen
