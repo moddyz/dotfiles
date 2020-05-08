@@ -68,9 +68,6 @@ let g:cmake_format_args = "--max-pargs-hwrap 0 --dangle-parens true --tab-size 4
 autocmd FileType cmake nnoremap <buffer><F8> :<C-u>CMakeFormat<CR>
 autocmd FileType cmake vnoremap <buffer><F8> :CMakeFormat<CR>
 
-" Enable doxygen syntax highlighting for C/C++.
-autocmd FileType c,cpp,objc set syntax=cpp.doxygen
-
 " 0 should jump to first character non-whitespace character.
 map 0 ^
 
@@ -89,7 +86,7 @@ set hidden
 :set hlsearch
 
 " Enable doxygen syntax highlighting for C/C++.
-autocmd FileType c,cpp,objc set syntax=cpp.doxygen
+autocmd FileType c,cpp,objc,cuda set syntax=cpp.doxygen
 
 " Delect *.dox as doxygen.
 au BufNewFile,BufRead *.dox setfiletype doxygen
