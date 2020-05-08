@@ -92,7 +92,7 @@ set hidden
 :set hlsearch
 
 " Enable doxygen syntax highlighting for C/C++.
-autocmd FileType c,cpp,objc set syntax=cpp.doxygen
+autocmd FileType c,cpp,objc,cuda set syntax=cpp.doxygen
 
 " Delect *.dox as doxygen.
 au BufNewFile,BufRead *.dox setfiletype doxygen
