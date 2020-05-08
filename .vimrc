@@ -57,8 +57,8 @@ autocmd BufWrite *.vim :call DeleteTrailingWS()
 map <F4> :FSHere<CR>
 
 " Run clang-format against current, optionally selected, buffer.
-autocmd FileType c,cpp,objc,javascript nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc,javascript vnoremap <buffer><F8> :ClangFormat<CR>
+autocmd FileType c,cpp,objc,cuda,javascript nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc,cuda,javascript vnoremap <buffer><F8> :ClangFormat<CR>
 
 " Additional args for cmake-format.
 " Forces subgroups and arguments into a vertical layout.
