@@ -23,3 +23,25 @@ findAndDeleteLines() {
         find . -name ".git" -prune -o -type f -exec sed -i "/$1/g" {} +
     fi
 }
+
+prependEnv() 
+{
+    if [ ! $# -eq 2 ]
+    then
+        echo "usage: prependEnv <ENV_VAR> <ENV_VALUE>"
+    else
+        ENV_VALUE=`printenv $1`
+        export $1="$2${ENV_VALUE:+${ENV_VALUE}:}"
+    fi
+}
+
+appendEnv() 
+{
+    if [ ! $# -eq 2 ]
+    then
+        echo "usage: appendEnv <ENV_VAR> <ENV_VALUE>"
+    else
+        ENV_VALUE=`printenv $1`
+        export $1="${ENV_VALUE:+${ENV_VALUE}:}$2"
+    fi
+}
