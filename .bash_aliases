@@ -7,7 +7,7 @@ alias rm='rm -v'
 alias mkdir='mkdir -v'
 
 findAndReplace() {
-    if [ ! $# -eq 2 ]
+    if [ $# -ne 2 ]
     then
         echo "usage: findAndReplace <TEXT_TO_REPLACE> <REPLACEMENT>"
     else
@@ -16,7 +16,7 @@ findAndReplace() {
 }
 
 findAndDeleteLines() {
-    if [ ! $# -eq 1 ]
+    if [ $# -ne 1 ]
     then
         echo "usage: findAndDeleteLines <PATTERN>"
     else
@@ -24,9 +24,22 @@ findAndDeleteLines() {
     fi
 }
 
+formatCppCode() {
+    if [ $# -ne 0 ]
+    then
+        echo "usage: formatCppCode"
+    else
+        find . \
+            -path "./build" -prune -o \
+            -path "./thirdparty" -prune -o \
+            -name "*.h" -type f -exec clang-format -i --verbose {} + -o \
+            -name "*.cpp" -type f -exec clang-format -i --verbose {} +
+    fi
+}
+
 prependEnv() 
 {
-    if [ ! $# -eq 2 ]
+    if [ $# -ne 2 ]
     then
         echo "usage: prependEnv <ENV_VAR> <ENV_VALUE>"
     else
@@ -37,7 +50,7 @@ prependEnv()
 
 appendEnv() 
 {
-    if [ ! $# -eq 2 ]
+    if [ $# -ne 2 ]
     then
         echo "usage: appendEnv <ENV_VAR> <ENV_VALUE>"
     else
