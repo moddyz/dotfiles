@@ -30,8 +30,9 @@ formatCppCode() {
         echo "usage: formatCppCode"
     else
         find . \
-            -path "./build" -prune -o \
-            -path "./thirdparty" -prune -o \
+            -name ".git" -prune -o \
+            -name "build" -prune -o \
+            -name "thirdparty" -prune -o \
             -name "*.h" -type f -exec clang-format -i --verbose {} + -o \
             -name "*.cpp" -type f -exec clang-format -i --verbose {} +
     fi
