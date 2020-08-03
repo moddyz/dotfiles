@@ -38,6 +38,19 @@ formatCppCode() {
     fi
 }
 
+formatPythonCode() {
+    if [ $# -ne 0 ]
+    then
+        echo "usage: formatPythonCode"
+    else
+        find . \
+            -name ".git" -prune -o \
+            -name "build" -prune -o \
+            -name "thirdparty" -prune -o \
+            -name "*.py" -type f -exec black -l 120 {} +
+    fi
+}
+
 prependEnv() 
 {
     if [ $# -ne 2 ]
