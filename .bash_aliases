@@ -72,3 +72,11 @@ appendEnv()
         export $1="${ENV_VALUE:+${ENV_VALUE}:}$2"
     fi
 }
+
+syncCXXTemplate()
+{
+    rm -rf /tmp/CXXTemplate
+    git clone https://github.com/moddyz/CXXTemplate /tmp/CXXTemplate
+    cp -r /tmp/CXXTemplate/cmake/tools/* ./cmake/tools/
+    cp /tmp/CXXTemplate/.clang-format ./
+}
