@@ -80,3 +80,8 @@ syncCXXTemplate()
     cp -r /tmp/CXXTemplate/cmake/tools/* ./cmake/tools/
     cp /tmp/CXXTemplate/.clang-format ./
 }
+
+dumpAst()
+{
+    clang -Xclang -ast-dump -fsyntax-only $1
+}
