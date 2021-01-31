@@ -8,4 +8,5 @@ mkdir -v -p ~/.vim/plugin/
 cp -r -v $(dirname "$0")/.vim ~/
 cp -v $(dirname "$0")/.bash_aliases ~/.bash_aliases
 cp -v $(dirname "$0")/.tmux.conf ~/.tmux.conf
+cp -v $(dirname "$0")/.gdbinit ~/.gdbinit
 echo "Done!"
