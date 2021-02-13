@@ -85,8 +85,8 @@ autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set hidden
 :set hlsearch
 
-" Enable doxygen syntax highlighting for C/C++.
+" Enable doxygen syntax highlighting for C/C++/cuda.
 autocmd FileType c,cpp,objc,cuda set syntax=cpp.doxygen
 
-" Delect *.dox as doxygen.
+" Detect *.dox as doxygen.
 au BufNewFile,BufRead *.dox setfiletype doxygen
