@@ -6,28 +6,28 @@ alias mv='mv -v'
 alias rm='rm -v'
 alias mkdir='mkdir -v'
 
-findAndReplace() {
+find_and_replace() {
     if [ $# -ne 2 ]
     then
-        echo "usage: findAndReplace <TEXT_TO_REPLACE> <REPLACEMENT>"
+        echo "usage: find_and_replace <TEXT_TO_REPLACE> <REPLACEMENT>"
     else
         find . -name ".git" -prune -o -type f -exec sed -i "s/$1/$2/g" {} +
     fi
 }
 
-findAndDeleteLines() {
+find_and_delete() {
     if [ $# -ne 1 ]
     then
-        echo "usage: findAndDeleteLines <PATTERN>"
+        echo "usage: find_and_delete <PATTERN>"
     else
         find . -name ".git" -prune -o -type f -exec sed -i "/$1/g" {} +
     fi
 }
 
-formatCppCode() {
+format_cpp_code() {
     if [ $# -ne 0 ]
     then
-        echo "usage: formatCppCode"
+        echo "usage: format_cpp_code"
     else
         find . \
             -name ".git" -prune -o \
@@ -38,10 +38,10 @@ formatCppCode() {
     fi
 }
 
-formatPythonCode() {
+format_python_code() {
     if [ $# -ne 0 ]
     then
-        echo "usage: formatPythonCode"
+        echo "usage: format_python_code"
     else
         find . \
             -name ".git" -prune -o \
@@ -51,29 +51,29 @@ formatPythonCode() {
     fi
 }
 
-prependEnv() 
+prepend_env() 
 {
     if [ $# -ne 2 ]
     then
-        echo "usage: prependEnv <ENV_VAR> <ENV_VALUE>"
+        echo "usage: prepend_env <ENV_VAR> <ENV_VALUE>"
     else
         ENV_VALUE=`printenv $1`
         export $1="$2${ENV_VALUE:+${ENV_VALUE}:}"
     fi
 }
 
-appendEnv() 
+append_env() 
 {
     if [ $# -ne 2 ]
     then
-        echo "usage: appendEnv <ENV_VAR> <ENV_VALUE>"
+        echo "usage: append_env <ENV_VAR> <ENV_VALUE>"
     else
         ENV_VALUE=`printenv $1`
         export $1="${ENV_VALUE:+${ENV_VALUE}:}$2"
     fi
 }
 
-syncCXXTemplate()
+sync_cxx_template()
 {
     rm -rf /tmp/CXXTemplate
     git clone https://github.com/moddyz/CXXTemplate /tmp/CXXTemplate
@@ -81,7 +81,7 @@ syncCXXTemplate()
     cp /tmp/CXXTemplate/.clang-format ./
 }
 
-dumpAst()
+dump_ast()
 {
     clang -Xclang -ast-dump -fsyntax-only $1
 }
