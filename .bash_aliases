@@ -5,6 +5,7 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
 alias mkdir='mkdir -v'
+alias home='cd ~'
 
 find_and_replace() {
     if [ $# -ne 2 ]
