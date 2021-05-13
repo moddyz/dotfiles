@@ -8,6 +8,9 @@ filetype indent on
 " Enable pathogen plugin loading.
 execute pathogen#infect()
 
+" Format rust code on save.
+let g:rustfmt_autosave = 1
+
 " Syntax highlighting
 syntax enable
 
