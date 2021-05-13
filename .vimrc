@@ -5,6 +5,9 @@ set history=500
 filetype plugin on
 filetype indent on
 
+" Enable pathogen plugin loading.
+execute pathogen#infect()
+
 " Syntax highlighting
 syntax enable
 
