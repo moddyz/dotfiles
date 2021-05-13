@@ -62,17 +62,8 @@ autocmd BufWrite *.vim :call DeleteTrailingWS()
 " Switch between header and source files via F4
 map <F4> :FSHere<CR>
 
-" Run clang-format against current, optionally selected, buffer.
-autocmd FileType c,cpp,objc,cuda,javascript nnoremap <buffer><F8> :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc,cuda,javascript vnoremap <buffer><F8> :ClangFormat<CR>
-
-" Additional args for cmake-format.
-" Forces subgroups and arguments into a vertical layout.
-let g:cmake_format_args = "--max-pargs-hwrap 0 --dangle-parens true --tab-size 4"
-
-" Run cmake-format against current, optionally selected buffer.
-autocmd FileType cmake nnoremap <buffer><F8> :<C-u>CMakeFormat<CR>
-autocmd FileType cmake vnoremap <buffer><F8> :CMakeFormat<CR>
+" clang-format on save.
+autocmd BufWritePre *.h,*.hpp,*.c,*.cpp :call ClangFormatBuffer()
 
 " 0 should jump to first character non-whitespace character.
 map 0 ^
