@@ -86,3 +86,10 @@ dump_ast()
 {
     clang -Xclang -ast-dump -fsyntax-only $1
 }
+
+# Prompt formatting
+PROMPT="%n %d $ "
+
+# Terminal colors
+export LSCOLORS="GxFxCxDxBxegedabagaced"
+alias ls='ls -lGH'

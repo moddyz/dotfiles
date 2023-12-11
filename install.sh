@@ -6,7 +6,7 @@ echo "Installing linux configuration files."
 cp -v $(dirname "$0")/.vimrc ~/.vimrc
 mkdir -v -p ~/.vim/plugin/
 cp -r -v $(dirname "$0")/.vim ~/
-cp -v $(dirname "$0")/.bash_aliases ~/.bash_aliases
+cp -v $(dirname "$0")/.zsh_aliases ~/.zsh_aliases
 cp -v $(dirname "$0")/.tmux.conf ~/.tmux.conf
 cp -v $(dirname "$0")/.gdbinit ~/.gdbinit
 
