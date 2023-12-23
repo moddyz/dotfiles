@@ -21,10 +21,10 @@ colorscheme desert
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 " Map \y for copying to clipboard.
-:nnoremap <Leader>y "+y
+:noremap <Leader>y "+y
 
 " Map \p for pasting from clipboard.
-:nnoremap <Leader>p "+p
+:noremap <Leader>p "+p
 
 " 2 lines for the bottom command bar.
 set cmdheight=2
