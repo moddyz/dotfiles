@@ -5,7 +5,13 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
 alias mkdir='mkdir -v'
-alias home='cd ~'
+
+# Prompt formatting
+PROMPT="%n %d $ "
+
+# Terminal colors
+export LSCOLORS="GxFxCxDxBxegedabagaced"
+alias ls='ls -lGH'
 
 find_and_replace() {
     if [ $# -ne 2 ]
@@ -73,23 +79,3 @@ append_env()
         export $1="${ENV_VALUE:+${ENV_VALUE}:}$2"
     fi
 }
-
-sync_cxx_template()
-{
-    rm -rf /tmp/CXXTemplate
-    git clone https://github.com/moddyz/CXXTemplate /tmp/CXXTemplate
-    cp -r /tmp/CXXTemplate/cmake/tools/* ./cmake/tools/
-    cp /tmp/CXXTemplate/.clang-format ./
-}
-
-dump_ast()
-{
-    clang -Xclang -ast-dump -fsyntax-only $1
-}
-
-# Prompt formatting
-PROMPT="%n %d $ "
-
-# Terminal colors
-export LSCOLORS="GxFxCxDxBxegedabagaced"
-alias ls='ls -lGH'
