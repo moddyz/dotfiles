@@ -26,6 +26,9 @@ colorscheme desert
 " Map \p for pasting from clipboard.
 :noremap <Leader>p "+p
 
+" Map \x for pasting from clipboard.
+:nnoremap <Leader>x :set paste! paste?<Return>
+
 " 2 lines for the bottom command bar.
 set cmdheight=2
 
