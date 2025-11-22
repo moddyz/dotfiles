@@ -20,14 +20,8 @@ colorscheme desert
 " Map \s to initiate replacement of word underneath cursor.
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
-" Map \y for copying to clipboard.
-:noremap <Leader>y "+y
-
-" Map \p for pasting from clipboard.
-:noremap <Leader>p "+p
-
-" Map \x for pasting from clipboard.
-:nnoremap <Leader>x :set paste! paste?<Return>
+" Use system clipboard for copy & paste
+set clipboard=unnamedplus
 
 " 2 lines for the bottom command bar.
 set cmdheight=2
